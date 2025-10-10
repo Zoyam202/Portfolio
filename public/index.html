@@ -1,41 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>S0umyajit | Portfolio</title>
-  <meta name="description" content="Self Developed personal website build with React.js">
-
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="S0umyajit | Portfolio">
-  <meta itemprop="description" content="Self Developed personal website build with React.js">
-  <meta itemprop="image"
-    content="https://raw.githubusercontent.com/soumyajit4419/Portfolio/master/Images/readme-img.png?token=AK7VCIF5RYEUZZAURELPTAC76U6AK">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://soumyajit.vercel.app">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="S0umyajit | Portfolio">
-  <meta property="og:description" content="Self Developed personal website build with React.js">
-  <meta property="og:image"
-    content="https://raw.githubusercontent.com/soumyajit4419/Portfolio/master/Images/readme-img.png?token=AK7VCIF5RYEUZZAURELPTAC76U6AK">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="S0umyajit | Portfolio">
-  <meta name="twitter:description" content="Self Developed personal website build with React.js">
-  <meta name="twitter:image"
-    content="https://raw.githubusercontent.com/soumyajit4419/Portfolio/master/Images/readme-img.png?token=AK7VCIF5RYEUZZAURELPTAC76U6AK">
+  <title>Zoya Ajaz • Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0d10; --card:#11151a; --muted:#9fb0c6; --text:#e9eef6; --accent:#6cb2ff; --accent-2:#9bffd0; --chip:#1a2129; --ring:#2a3340; }
+    body{ margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text); }
+    .container{ width:min(1100px,92%); margin:0 auto; }
+    .site-header{ position:sticky; top:0; z-index:100; }
+    .header-inner{ display:flex; justify-content:space-between; align-items:center; padding:1rem; background:rgba(108,178,255,0.8); backdrop-filter:saturate(1.2) blur(12px); border-radius:12px; }
+    nav.contact{ display:flex; gap:1rem; }
+    nav.contact a{ color:#000000; text-decoration:none; font-weight:600; }
+    .hamburger{ display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .hamburger span{ display:block; width:25px; height:3px; background:#000000; border-radius:2px; }
+    @media(max-width:768px){
+      nav.contact{ display:none; flex-direction:column; background:var(--card); position:absolute; top:70px; right:10px; padding:1rem; border:1px solid var(--ring); border-radius:8px; }
+      nav.contact.show{ display:flex; }
+      .hamburger{ display:flex; }
+    }
+    html{ scroll-behavior:smooth; }
+    section{ scroll-margin-top: 84px; padding:34px 0 10px; margin-bottom:16px; }
+    .art-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
+    @media(max-width:860px){ .art-grid{ grid-template-columns:1fr; } }
+    .item{ background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:18px; margin-bottom:14px; box-shadow:0 4px 8px rgba(0,0,0,.35); }
+    .item-head{ display:flex; flex-direction:column; gap:6px; margin-bottom:6px; }
+    .item-head h3{ margin:0; font-size:1.05rem; font-weight:700; color:#ffffff; }
+    .meta{ color:var(--muted); font-size:.95rem; }
+    .blurb{ color:#d2deef; }
+  </style>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-</body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="hamburger" aria-label="Toggle menu" aria-controls="nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </div>
+        <nav id="nav" class="contact">
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#volunteer">Volunteering</a>
+          <a href="#art">Art</a>
+          <a href="#contact">Contact</a>
+          <a href="Resume%20new%202025.pdf" download>Download Résumé</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
+  <section class="hero-pro" id="home">
+    <div class="container">
+      <h2>Hi, I’m Zoya Ajaz.</h2>
+      <p>Public Health B.S. candidate with hands-on experience in community health outreach and early childhood education. I care about making health info clear, inclusive, and easy to act on.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:ajazzm@ucmail.uc.edu">ajazzm@ucmail.uc.edu</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/zoya-ajaz" target="_blank" rel="noopener">linkedin.com/in/zoya-ajaz</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>Optometry Shadowing</h3>
+          <div class="meta">Mason Vision Center • Jul 2025 – Aug 2025</div>
+        </div>
+        <ul>
+          <li>Observed patient consultations and clinical procedures to understand principles of preventive care and health promotion.</li>
+          <li>Explored the role of cultural competence in improving patient-provider communication and delivering equitable eye care.</li>
+          <li>Familiarized with specialized diagnostic equipment, medical terminology, and standard clinical workflows.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-head">
+          <h3>Assistant Teacher</h3>
+          <div class="meta">Primrose School of Mason • Apr 2025 – Aug 2025</div>
+        </div>
+        <ul>
+          <li>Collaborated with lead teachers to design and deliver engaging lesson plans and interactive activities for early childhood learners.</li>
+          <li>Monitored and guided students to promote cognitive and social development.</li>
+          <li>Adapted lessons to support individual learning needs and cultural backgrounds.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-head">
+          <h3>Assistant Teacher</h3>
+          <div class="meta">Kids R Kids, Mason, OH • Apr 2024 – Aug 2024</div>
+        </div>
+        <ul>
+          <li>Facilitated daily classroom routines to ensure a safe, inclusive learning environment.</li>
+          <li>Implemented positive behavior strategies to enhance engagement and participation.</li>
+          <li>Integrated culturally responsive practices to foster diversity awareness and respect.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-head">
+          <h3>Entrepreneur</h3>
+          <div class="meta">Artistic Styles • Nov 2021 – Mar 2022</div>
+        </div>
+        <ul>
+          <li>Founded and managed a small creative business for custom artwork and personalized designs.</li>
+          <li>Developed digital marketing campaigns to increase brand visibility and attract clients.</li>
+          <li>Streamlined order fulfillment and record-keeping for operational efficiency.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="volunteer">
+    <div class="container">
+      <h2>Volunteer Experience</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>Camp MEE Volunteer</h3>
+          <div class="meta">Planned Parenthood • Aug 2025</div>
+        </div>
+        <ul>
+          <li>Supported community outreach initiatives focused on sexual and reproductive health education.</li>
+          <li>Facilitated interactive lessons and discussions to empower youth with accurate, accessible health information.</li>
+          <li>Organized and prepared classroom spaces and materials to enhance program delivery and engagement.</li>
+        </ul>
+      </article>
+      <article class="item">
+        <div class="item-head">
+          <h3>Volunteer</h3>
+          <div class="meta">Scarlet Oaks</div>
+        </div>
+        <ul>
+          <li>Engaged with students to learn about different cultures and perspectives.</li>
+          <li>Practiced conversational English with peers to support language development and cross-cultural exchange.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="art">
+    <div class="container">
+      <h2>Art</h2>
+      <div class="art-grid">
+        <article class="item">
+          <div class="item-head">
+            <h3>Flowers</h3>
+            <div class="meta">Acrylic on paper</div>
+          </div>
+          <p>Three yellow blooms framed by expressive green strokes. A short study in motion and growth.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Still Life</h3>
+            <div class="meta">Acrylic</div>
+          </div>
+          <p>Bottles and geometric shapes on a warm ground — a balance of line, tone, and negative space.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Flower Painting</h3>
+            <div class="meta">Acrylic</div>
+          </div>
+          <p>Bright floral composition painted in bold colors, exploring light and texture.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Ceramic Flower Tile</h3>
+            <div class="meta">Ceramic</div>
+          </div>
+          <p>A hand-crafted ceramic tile with a carved flower motif, glazed in earthy tones.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Clay Shoe Sculpture</h3>
+            <div class="meta">Clay</div>
+          </div>
+          <p>A sculpted shoe in clay that studies form, proportion, and surface detail.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Clay Square Pot</h3>
+            <div class="meta">Clay</div>
+          </div>
+          <p>Square clay pot with carved designs along the sides, balancing utility and aesthetics.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Still Life Bottles</h3>
+            <div class="meta">Acrylic</div>
+          </div>
+          <p>A still life arrangement of bottles and shapes, exploring composition and tone.</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Still Life with Pot, Mug, and Orange</h3>
+            <div class="meta">Acrylic</div>
+          </div>
+          <p>Acrylic still life of household objects including a pot, mug, and fruit — an exercise in color balance and realism.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const nav = document.getElementById('nav');
+    burger?.addEventListener('click', ()=>{
+      nav.classList.toggle('show');
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!expanded));
+    });
+  </script>
+</body>
 </html>
