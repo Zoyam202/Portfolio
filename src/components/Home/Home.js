@@ -4,6 +4,7 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import ImageCarousel from "./ImageCarousel";
 
 function Home() {
   return (
@@ -37,6 +38,12 @@ function Home() {
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
               />
+            </Col>
+          </Row>
+          {/* Carousel Section */}
+          <Row>
+            <Col md={12} style={{ marginTop: 30 }}>
+              <ImageCarousel />
             </Col>
           </Row>
         </Container>
