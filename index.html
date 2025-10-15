@@ -142,6 +142,64 @@
     </div>
   </section>
 
+
+<section class="section" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="item">
+      <div class="item-head">
+        <h3>Technical & Professional Skills</h3>
+      </div>
+      <ul>
+        <li>Public Health Research and Data Interpretation</li>
+        <li>Health Education and Promotion Strategies</li>
+        <li>Community Outreach and Engagement</li>
+        <li>Early Childhood Education & Classroom Support</li>
+        <li>Curriculum Design and Lesson Planning</li>
+        <li>Communication and Interpersonal Skills</li>
+        <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+        <li>Project Planning and Organization</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <h3>Soft Skills</h3>
+      </div>
+      <ul>
+        <li>Team Collaboration</li>
+        <li>Empathy and Cultural Awareness</li>
+        <li>Adaptability and Problem Solving</li>
+        <li>Leadership and Mentoring</li>
+        <li>Active Listening</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Image Carousel Section -->
+    <section class="section" id="image-carousel">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="carousel-wrapper" style="position:relative; max-width:700px; margin:0 auto;">
+          <button class="carousel-arrow left" aria-label="Previous" style="position:absolute; left:0; top:50%; transform:translateY(-50%); background:var(--accent); border:none; border-radius:50%; width:40px; height:40px; font-size:2rem; color:#fff; cursor:pointer; z-index:2;">&#8592;</button>
+          <div class="carousel-images" style="overflow:hidden;">
+            <div class="carousel-track" style="display:flex; transition:transform 0.5s;">
+              <img src="build/Images/91A9A362-AD9D-4FB3-80A4-F3AC3274523D.JPG" alt="Image 1" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+              <img src="build/Images/flower%20paiting" alt="Image 2" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+              <img src="build/Images/flower%20paiting" alt="Image 3" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+              <img src="build/Images/flower%20paiting" alt="Image 4" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+              <img src="build/Images/flower%20paiting" alt="Image 5" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+              <img src="build/Images/flower%20paiting" alt="Image 6" style="width:100%; max-width:700px; object-fit:cover; border-radius:12px; margin-right:12px;" />
+            </div>
+          </div>
+          <button class="carousel-arrow right" aria-label="Next" style="position:absolute; right:0; top:50%; transform:translateY(-50%); background:var(--accent); border:none; border-radius:50%; width:40px; height:40px; font-size:2rem; color:#fff; cursor:pointer; z-index:2;">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
   <section class="section" id="art">
     <div class="container">
       <h2>Art</h2>
@@ -207,6 +265,29 @@
   </section>
 
   <script>
+    // Simple Carousel JS
+    const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel-track img');
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+    let currentIndex = 0;
+    const totalImages = images.length;
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * (images[0].clientWidth + 12)}px)`;
+    }
+    leftArrow?.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+    rightArrow?.addEventListener('click', () => {
+      if (currentIndex < totalImages - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+    window.addEventListener('resize', updateCarousel);
     const burger = document.querySelector('.hamburger');
     const nav = document.getElementById('nav');
     burger?.addEventListener('click', ()=>{
