@@ -179,6 +179,101 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Visualization Badge</title>
+  <style>
+    :root{
+      --blue:#07B6FF; /* cyan-blue ring */
+      --text:#0b0b0b;
+      --banner:#0b0b0b;
+      --bg:#f1f4f8;
+      --intel:#0071C5; /* Intel brand blue (approx) */
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;display:grid;place-items:center;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+    }
+    .wrap{width:min(680px,92vw);}
+    svg{width:100%;height:auto;display:block;}
+    .label{font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+    .small{font-size:15px;letter-spacing:.07em;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Responsive SVG badge recreated from the provided image -->
+    <svg viewBox="0 0 680 580" role="img" aria-label="Data Visualization badge: Visualizing impact on sustainability with Intel">
+      <defs>
+        <!-- curved text path for the top ring caption -->
+        <path id="topArc" d="M140,220 A200,200 0 0 1 540,220"/>
+        <!-- shadow blur for subtle depth -->
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+          <feOffset dy="1" result="off"/>
+          <feMerge><feMergeNode in="off"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Outer rings -->
+      <g transform="translate(340 290)">
+        <!-- outer aqua stroke -->
+        <circle r="245" fill="#fff" stroke="var(--blue)" stroke-width="16"/>
+        <!-- inner aqua stroke to mimic double-ring look -->
+        <circle r="210" fill="#fff" stroke="var(--blue)" stroke-width="10"/>
+      </g>
+
+      <!-- Top ribbon text: THE GLOBAL CAREER ACCELERATOR -->
+      <g transform="translate(0,10)">
+        <text fill="var(--text)" font-size="18" font-weight="700" letter-spacing=".15em">
+          <textPath href="#topArc" startOffset="50%" text-anchor="middle">THE GLOBAL CAREER ACCELERATOR</textPath>
+        </text>
+      </g>
+
+      <!-- small globe with connection dots -->
+      <g transform="translate(340 210)">
+        <g fill="none" stroke="var(--text)" stroke-width="2.5">
+          <circle r="18"/>
+          <ellipse rx="10" ry="18"/>
+          <ellipse rx="18" ry="10"/>
+          <path d="M-18,0 H18"/>
+          <path d="M0,-18 V18"/>
+        </g>
+        <!-- connecting lines to dots -->
+        <g stroke="var(--text)" stroke-width="3" stroke-linecap="round">
+          <line x1="-42" y1="0" x2="-22" y2="0"/>
+          <line x1="22" y1="0" x2="42" y2="0"/>
+        </g>
+        <g fill="var(--text)">
+          <circle cx="-50" cy="0" r="6"/>
+          <circle cx="50" cy="0" r="6"/>
+        </g>
+      </g>
+
+      <!-- Black center banner -->
+      <g filter="url(#soft)">
+        <rect x="85" y="250" rx="16" ry="16" width="510" height="70" fill="var(--banner)"/>
+        <text x="340" y="296" fill="#fff" font-size="34" class="label" text-anchor="middle">DATA VISUALIZATION</text>
+      </g>
+
+      <!-- Subtext -->
+      <text x="340" y="360" text-anchor="middle" fill="var(--text)" font-size="22" font-weight="600">Visualizing impact on</text>
+      <text x="340" y="388" text-anchor="middle" fill="var(--text)" font-size="22" font-weight="600">sustainability with</text>
+
+      <!-- Intel wordmark approximation -->
+      <g transform="translate(340,448)">
+        <text x="0" y="0" text-anchor="middle" font-size="60" font-weight="800" fill="var(--intel)" style="font-family: 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;">intel</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
+
+
+
     <!-- Image Carousel Section -->
     <section class="section" id="image-carousel">
       <div class="container">
