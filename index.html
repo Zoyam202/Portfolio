@@ -179,6 +179,90 @@
 
 
 
+
+
+export default function DeansListCertificate() {
+  // Change these values to reuse the certificate
+  const studentName = "Zoya Ajaz";
+  const term = "Fall Semester 2023";
+  const campus = "University of Cincinnati Blue Ash College";
+  const certificateTitle = "Dean's List";
+  const deanName = "Robin Lightner, Ph.D.";
+  const deanTitle = "Dean, UC Blue Ash College";
+  const issuedOn = "December 20, 2023";
+
+  const handlePrint = () => window.print();
+
+  return (
+    <div className="min-h-screen w-full bg-slate-100 flex items-center justify-center p-6">
+      <div className="bg-white shadow-2xl rounded-3xl relative max-w-4xl w-full aspect-[11/8.5] p-10 print:shadow-none">
+        {/* Ornamental border */}
+        <div className="absolute inset-6 rounded-2xl border-4 border-sky-400"></div>
+        <div className="absolute inset-10 rounded-2xl border-2 border-sky-600"></div>
+
+        {/* Header */}
+        <div className="relative z-10 text-center mt-6">
+          <h2 className="text-sm tracking-[0.35em] font-semibold text-slate-600 uppercase">{campus}</h2>
+          <h1 className="mt-3 text-5xl font-extrabold tracking-tight text-slate-900">{certificateTitle}</h1>
+          <p className="mt-1 text-base font-medium text-slate-600">This certificate proudly recognizes</p>
+        </div>
+
+        {/* Name */}
+        <div className="relative z-10 text-center mt-6">
+          <div className="inline-block px-8 py-4 rounded-xl bg-sky-50 border border-sky-200">
+            <p className="text-4xl font-bold tracking-wide text-slate-900">{studentName}</p>
+          </div>
+          <p className="mt-4 text-lg text-slate-700">for outstanding academic achievement during</p>
+          <p className="text-2xl font-semibold text-slate-900">{term}</p>
+        </div>
+
+        {/* Divider with emblem */}
+        <div className="relative z-10 flex items-center justify-center my-10">
+          <div className="h-px bg-slate-300 w-40"/>
+          <div className="mx-4 w-14 h-14 rounded-full border-4 border-sky-400 flex items-center justify-center text-slate-700 font-black">🏛️</div>
+          <div className="h-px bg-slate-300 w-40"/>
+        </div>
+
+        {/* Body text */}
+        <div className="relative z-10 text-center max-w-2xl mx-auto text-slate-700 leading-relaxed">
+          <p>
+            Awarded to students whose scholastic performance exemplifies excellence and dedication
+            to their studies, placing them among the top achievers in their academic program.
+          </p>
+        </div>
+
+        {/* Signature + date row */}
+        <div className="relative z-10 grid grid-cols-2 gap-10 mt-12 px-10">
+          <div className="text-center">
+            <div className="h-10" />
+            <div className="mx-auto h-px bg-slate-400 w-64" />
+            <p className="mt-2 font-semibold text-slate-900">{deanName}</p>
+            <p className="text-sm text-slate-600">{deanTitle}</p>
+          </div>
+          <div className="text-center">
+            <div className="h-10" />
+            <div className="mx-auto h-px bg-slate-400 w-64" />
+            <p className="mt-2 font-semibold text-slate-900">{issuedOn}</p>
+            <p className="text-sm text-slate-600">Date of Issue</p>
+          </div>
+        </div>
+
+        {/* Print/Export */}
+        <div className="relative z-10 mt-10 flex items-center justify-center gap-3">
+          <button onClick={handlePrint} className="px-5 py-2 rounded-xl bg-sky-600 text-white font-semibold shadow hover:bg-sky-700 active:bg-sky-800 print:hidden">
+            Print / Save as PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
