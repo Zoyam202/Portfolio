@@ -1,0 +1,85 @@
+/* === Business Section Styling === */
+.business-section {
+  margin-top: 3rem;
+  padding-bottom: 4rem;
+  background: var(--bg);
+}
+
+/* === Fade Carousel Styling === */
+.fade-carousel {
+  position: relative;
+  max-width: 1000px;
+  height: 500px;
+  margin: 2rem auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--ring);
+  background: var(--card);
+}
+
+.fade-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  height: 100%;
+}
+
+.fade-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.fade-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.fade-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(108, 178, 255, 0.7);
+  border: none;
+  color: #000;
+  font-size: 2rem;
+  padding: 0.3em 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.fade-btn:hover {
+  background: var(--accent-2);
+}
+
+.fade-btn.prev {
+  left: 10px;
+}
+
+.fade-btn.next {
+  right: 10px;
+}
+
+.fade-dots {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.fade-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: var(--ring);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.fade-dots .dot.active {
+  background-color: var(--accent);
+}

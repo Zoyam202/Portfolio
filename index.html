@@ -163,9 +163,9 @@
       <h2>Certifications</h2>
       <p>Here are some of my professional certifications and achievements:</p>
       <div class="cert-grid">
-        <img src="data_visualization_cert.png" alt="Data Visualization Certification">
-        <img src="cpr_cert.png" alt="CPR Certification">>
-        <img src="deans_list_2023.jpg" alt="Dean's List Certification">
+        <img src="Images/Data visualization.png" alt="Data Visualization Certification">
+        <img src="Images/CPR.png" alt="CPR Certification">
+        <img src="Images/dean's list 2023.jpg" alt="Dean's List Certification">
       </div>
     </div>
   </section>
@@ -179,50 +179,42 @@
       const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !expanded);
     });
-    <!-- === BUSINESS IMAGE FADE CAROUSEL SECTION === -->
-<section class="section" id="business">
+  </script>
+
+  <!-- === BUSINESS IMAGE FADE CAROUSEL SECTION === -->
+<section class="section business-section" id="business">
   <div class="container">
     <h2>My Business</h2>
-    <p>Here’s a glimpse of my business work and creative projects:</p>
+    <p>Here's a glimpse of my business work and creative projects:</p>
 
     <div class="fade-carousel">
+      <button class="fade-btn prev" aria-label="Previous slide">&lt;</button>
+      <button class="fade-btn next" aria-label="Next slide">&gt;</button>
+      
       <div class="fade-slide active">
-        <img src="91A9A362-AD9D-4FB3-80A4-F3AC3274523D.JPG" alt="91A9A362-AD9D-4FB3-80A4-F3AC3274523D.JPG">
+        <img src="Images/1A9A362-AD9D-4FB3-80A4-F3AC3274523D.jpeg" alt="Business project showcase 1">
       </div>
       <div class="fade-slide">
-        <img src="IMG_1234.JPG" alt="IMG_1234.JPG">
+        <img src="Images/IMG_1234.jpeg" alt="Business project showcase 2">
       </div>
       <div class="fade-slide">
-        <img src="IMG_5678.JPG" alt="IMG_5678.JPG">
+        <img src="Images/IMG_5678.jpeg" alt="Business project showcase 3">
       </div>
       <div class="fade-slide">
-        <img src="img_7757.JPG" alt="img_7757.JPG">
+        <img src="Images/IMG_7757.jpeg" alt="Business project showcase 4">
       </div>
 
-       </div>
       <div class="fade-slide">
-        <img src="img_1079.JPG" alt="img_1079.JPG">
+        <img src="Images/IMG_1079.jpeg" alt="Business project showcase 5">
       </div>
       <div class="fade-slide">
-        <img src="img_7757.JPG" alt="img_7757.JPG">
+        <img src="Images/IMG_1241.jpeg" alt="Business project showcase 6">
       </div>
-      <div class="fade-slide">
-        <img src="img_1241.JPG" alt="img_1241.JPG">
-      </div>
-      <div class="fade-slide">
-        <img src="img_1079.JPG" alt="img_1079.JPG">
-      </div>
-      <div class="fade-slide">
-        <img src="img_7757.JPG" alt="img_7757.JPG">
-      </div>
-      <div class="fade-slide">
-        <img src="img_1241.JPG" alt="img_1241.JPG">
-      </div>
-      <div class="fade-slide">
-        <img src="img_7757.JPG" alt="img_7757.JPG">
-        </div>
+      
       <div class="fade-dots">
         <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -230,6 +222,40 @@
     </div>
   </div>
 </section>
-  </script>
+
+<script>
+  // Carousel functionality
+  const carousel = document.querySelector('.fade-carousel');
+  const slides = carousel.querySelectorAll('.fade-slide');
+  const dots = carousel.querySelectorAll('.dot');
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    // Remove active class from current slide and dot
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    // Calculate new slide index
+    currentSlide = (n + slides.length) % slides.length;
+    
+    // Add active class to new slide and dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  // Next/previous controls
+  prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+  nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+  // Dot controls
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+  });
+
+  // Auto advance slides every 5 seconds
+  setInterval(() => showSlide(currentSlide + 1), 5000);
+</script>
 </body>
 </html>
