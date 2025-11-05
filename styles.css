@@ -8,8 +8,8 @@
 /* === Fade Carousel Styling === */
 .fade-carousel {
   position: relative;
-  max-width: 1000px;
-  height: 500px;
+  width: 500px; /* 5 units width */
+  height: 700px; /* 7 units height */
   margin: 2rem auto 0;
   border-radius: 12px;
   overflow: hidden;
@@ -65,8 +65,12 @@
 }
 
 .fade-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
   text-align: center;
-  margin-top: 12px;
+  z-index: 2;
 }
 
 .fade-dots .dot {

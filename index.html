@@ -65,6 +65,27 @@
       transform:scale(1.03);
       box-shadow:0 6px 16px rgba(0,0,0,0.5);
     }
+    /* Carousel image sizing */
+    .fade-carousel { position:relative; }
+    .fade-carousel .fade-slide { display:none; text-align:center; }
+    .fade-carousel .fade-slide.active { display:block; }
+    .fade-carousel .fade-slide img {
+      max-height: 700px; /* limit height */
+      width: auto;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    }
+    @media (max-width: 860px) {
+      .fade-carousel .fade-slide img { max-height: 180px; }
+    }
+    @media (max-width: 480px) {
+      .fade-carousel .fade-slide img { max-height: 140px; }
+    }
   </style>
 </head>
 
@@ -192,13 +213,13 @@
       <button class="fade-btn next" aria-label="Next slide">&gt;</button>
       
       <div class="fade-slide active">
-        <img src="Images/1A9A362-AD9D-4FB3-80A4-F3AC3274523D.jpeg" alt="Business project showcase 1">
+        <img src="Images/1.JPG" alt="Business project showcase 1">
       </div>
       <div class="fade-slide">
-        <img src="Images/IMG_1234.jpeg" alt="Business project showcase 2">
+        <img src="Images/IMG_1211.jpeg" alt="Business project showcase 2">
       </div>
       <div class="fade-slide">
-        <img src="Images/IMG_5678.jpeg" alt="Business project showcase 3">
+        <img src="Images/IMG_7753.jpeg" alt="Business project showcase 3">
       </div>
       <div class="fade-slide">
         <img src="Images/IMG_7757.jpeg" alt="Business project showcase 4">
